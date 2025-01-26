@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #111111;
+}
+
+.heading {
+  position: relative;
+  color: #fff;
+}
+
+.clock {
+  width: 450px;
+  height: 450px;
+  background-image: url(/asset/img/clock.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Membuat bulatan pada jam */
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 9999;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+
+.clock .hour,
+.hr {
+  width: 160px;
+  height: 160px;
+}
+
+.clock .min,
+.mn {
+  width: 180px;
+  height: 180px;
+}
+
+.clock .sec,
+.sc {
+  width: 200px;
+  height: 200px;
+}
+
+.hr,
+.mn,
+.sc {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.hr::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 80px;
+  background-color: #458272;
+  border-radius: 6px 6px 0 0;
+  z-index: 10;
+}
+
+.mn::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background-color: #458222;
+  border-radius: 6px 6px 0 0;
+  z-index: 11;
+}
+
+.sc::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100px;
+  background-color: #423222;
+  border-radius: 6px 6px 0 0;
+  z-index: 12;
+}
